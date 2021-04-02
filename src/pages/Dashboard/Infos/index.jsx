@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import iconCharacters from '../../../assets/icon-characters.svg';
 import iconPlanets from '../../../assets/icon-planets.svg';
@@ -11,23 +11,47 @@ import DoubleInfo from './DoubleInfo';
 
 import { Container } from './styles';
 
-const Infos = () => (
-  <Container>
-    <Card>
-      <SingleInfo title="Characters" quantity={259} icon={iconCharacters} />
-    </Card>
-    <Card>
-      <DoubleInfo
-        infos={[
-          { title: 'Planets', quantity: 259, icon: iconPlanets },
-          { title: 'Moons', quantity: 259, icon: iconMoons },
-        ]}
-      />
-    </Card>
-    <Card>
-      <SingleInfo title="Spaceships" quantity={259} icon={iconSpaceships} />
-    </Card>
-  </Container>
-);
+import { StarWarsDataContext } from '../../../contexts/StarWarsDataContext';
+
+const Infos = () => {
+  const { characters, planets, starships, vehicles } = useContext(
+    StarWarsDataContext,
+  );
+
+  return (
+    <Container>
+      <Card>
+        <SingleInfo
+          title="Characters"
+          quantity={characters.length || 0}
+          icon={iconCharacters}
+        />
+      </Card>
+      <Card>
+        <DoubleInfo
+          infos={[
+            {
+              title: 'Planets',
+              quantity: planets.length || 0,
+              icon: iconPlanets,
+            },
+            {
+              title: 'Moons',
+              quantity: starships.length || 0,
+              icon: iconMoons,
+            },
+          ]}
+        />
+      </Card>
+      <Card>
+        <SingleInfo
+          title="Spaceships"
+          quantity={vehicles.length || 0}
+          icon={iconSpaceships}
+        />
+      </Card>
+    </Container>
+  );
+};
 
 export default Infos;

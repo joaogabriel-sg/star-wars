@@ -8,7 +8,7 @@ export const StarWarsDataContext = createContext({});
 export const StarWarsDataProvider = ({ children }) => {
   const [movies, setMovies] = useState([]);
   const [characters, setCharacters] = useState([]);
-  const [planetsAndMoons, setPlanetsAndMoons] = useState([]);
+  const [planets, setPlanets] = useState([]);
   const [starships, setStarships] = useState([]);
   const [vehicles, setVehicles] = useState([]);
 
@@ -29,22 +29,24 @@ export const StarWarsDataProvider = ({ children }) => {
       setLoading(true);
       setError(false);
 
-      const { data: moviesData } = await api.get('films');
+      const moviesRequest = createRequestUrlByPage(1, 'films');
       const charactersRequest = createRequestUrlByPage(9, 'people');
-      const planetsAndMoonsRequest = createRequestUrlByPage(6, 'planets');
+      const planetsRequest = createRequestUrlByPage(6, 'planets');
       const starshipsRequest = createRequestUrlByPage(4, 'starships');
       const vehiclesRequest = createRequestUrlByPage(4, 'vehicles');
 
       const requests = await axios.all([
+        moviesRequest,
         charactersRequest,
-        planetsAndMoonsRequest,
+        planetsRequest,
         starshipsRequest,
         vehiclesRequest,
       ]);
 
       const [
+        moviesData,
         charactersData,
-        planetsAndMoonsData,
+        planetsData,
         starshipsData,
         vehiclesData,
       ] = requests.map((request) => {
@@ -57,7 +59,7 @@ export const StarWarsDataProvider = ({ children }) => {
 
       setMovies(moviesData);
       setCharacters(charactersData);
-      setPlanetsAndMoons(planetsAndMoonsData);
+      setPlanets(planetsData);
       setStarships(starshipsData);
       setVehicles(vehiclesData);
     } catch (err) {
@@ -72,7 +74,7 @@ export const StarWarsDataProvider = ({ children }) => {
       value={{
         movies,
         characters,
-        planetsAndMoons,
+        planets,
         starships,
         vehicles,
         loading,
