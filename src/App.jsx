@@ -10,15 +10,19 @@ import GlobalStyle from './styles/global';
 
 import Sidebar from './components/Sidebar';
 
+import { StarWarsDataProvider } from './contexts/StarWarsDataContext';
+
 const App = () => (
-  <ThemeProvider theme={dark || light}>
-    <Container>
-      <BrowserRouter>
-        <Sidebar />
-        <GlobalStyle />
-        <Routes />
-      </BrowserRouter>
-    </Container>
+  <ThemeProvider theme={light || dark}>
+    <StarWarsDataProvider>
+      <Container>
+        <BrowserRouter>
+          <Sidebar />
+          <GlobalStyle />
+          <Routes />
+        </BrowserRouter>
+      </Container>
+    </StarWarsDataProvider>
   </ThemeProvider>
 );
 

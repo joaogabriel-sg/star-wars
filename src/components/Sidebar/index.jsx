@@ -4,7 +4,7 @@ import { IoSettingsOutline } from 'react-icons/io5';
 import { ReactComponent as StarWarsLogo } from '../../assets/logo.svg';
 import { ReactComponent as CharactersIcon } from '../../assets/icon-characters.svg';
 import { ReactComponent as PlanetsIcon } from '../../assets/icon-planets.svg';
-import { ReactComponent as SpaceshipsIcon } from '../../assets/icon-spaceships.svg';
+import { ReactComponent as StarshipsIcon } from '../../assets/icon-starships.svg';
 
 import Item from './Item';
 
@@ -22,8 +22,8 @@ const Sidebar = () => (
       <Item to="/planets-and-moons" title="Planets and Moons">
         <PlanetsIcon />
       </Item>
-      <Item to="/spaceships" title="Spaceships">
-        <SpaceshipsIcon />
+      <Item to="/starships" title="Starships">
+        <StarshipsIcon />
       </Item>
     </div>
 

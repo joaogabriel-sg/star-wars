@@ -3,7 +3,7 @@ import React from 'react';
 import iconCharacters from '../../../assets/icon-characters.svg';
 import iconPlanets from '../../../assets/icon-planets.svg';
 import iconMoons from '../../../assets/icon-moons.svg';
-import iconSpaceships from '../../../assets/icon-spaceships.svg';
+import iconStarships from '../../../assets/icon-starships.svg';
 
 import Card from '../../../components/Card';
 import SingleInfo from './SingleInfo';
@@ -25,7 +25,7 @@ const Infos = () => (
       />
     </Card>
     <Card>
-      <SingleInfo title="Spaceships" quantity={259} icon={iconSpaceships} />
+      <SingleInfo title="Spaceships" quantity={259} icon={iconStarships} />
     </Card>
   </Container>
 );
