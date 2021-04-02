@@ -10,6 +10,7 @@ export const StarWarsDataProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [planetsAndMoons, setPlanetsAndMoons] = useState([]);
   const [starships, setStarships] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -31,28 +32,34 @@ export const StarWarsDataProvider = ({ children }) => {
       const { data: moviesData } = await api.get('films');
       const charactersRequest = createRequestUrlByPage(9, 'people');
       const planetsAndMoonsRequest = createRequestUrlByPage(6, 'planets');
-      const starshipsRequest = createRequestUrlByPage(4, 'vehicles');
+      const starshipsRequest = createRequestUrlByPage(4, 'starships');
+      const vehiclesRequest = createRequestUrlByPage(4, 'vehicles');
 
       const requests = await axios.all([
         charactersRequest,
         planetsAndMoonsRequest,
         starshipsRequest,
+        vehiclesRequest,
       ]);
 
-      const [charactersData, planetsAndMoonsData, starshipsData] = requests.map(
-        (request) => {
-          const results = request.reduce((acc, { data }) => {
-            acc.push(...data.results);
-            return acc;
-          }, []);
-          return results;
-        },
-      );
+      const [
+        charactersData,
+        planetsAndMoonsData,
+        starshipsData,
+        vehiclesData,
+      ] = requests.map((request) => {
+        const results = request.reduce((acc, { data }) => {
+          acc.push(...data.results);
+          return acc;
+        }, []);
+        return results;
+      });
 
       setMovies(moviesData);
       setCharacters(charactersData);
       setPlanetsAndMoons(planetsAndMoonsData);
       setStarships(starshipsData);
+      setVehicles(vehiclesData);
     } catch (err) {
       setError(true);
     } finally {
@@ -62,7 +69,15 @@ export const StarWarsDataProvider = ({ children }) => {
 
   return (
     <StarWarsDataContext.Provider
-      value={{ movies, characters, planetsAndMoons, starships, loading, error }}
+      value={{
+        movies,
+        characters,
+        planetsAndMoons,
+        starships,
+        vehicles,
+        loading,
+        error,
+      }}
     >
       {children}
     </StarWarsDataContext.Provider>
