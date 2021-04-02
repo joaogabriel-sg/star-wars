@@ -4,7 +4,7 @@ export const Container = styled.aside`
   background: ${({ theme }) =>
     theme.title === 'dark' ? theme.colors.primary : theme.colors.text};
 
-  width: 24rem;
+  min-width: 24rem;
   padding: 2rem;
 
   display: flex;
