@@ -6,10 +6,11 @@ import { ReactComponent as IconCharacters } from '../../../assets/icon-character
 import { api } from '../../../services/api';
 
 import BackButton from '../../../components/BackButton';
+import ItemName from '../../../components/ItemName';
 import Infos from './Infos';
 import Planet from './Planet';
 
-import { Container, Name } from './styles';
+import { Container } from './styles';
 
 const Individually = () => {
   const { characterId } = useParams();
@@ -45,9 +46,9 @@ const Individually = () => {
       <BackButton to="/characters" />
       {character && planet && (
         <>
-          <Name>
+          <ItemName>
             <IconCharacters /> {character && character.name}
-          </Name>
+          </ItemName>
           <Infos
             gender={character.gender}
             height={character.height}

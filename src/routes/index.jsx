@@ -15,7 +15,7 @@ const Routes = () => (
     <Route path="/characters">
       <Characters />
     </Route>
-    <Route path="/planets-and-moons" exact>
+    <Route path="/planets-and-moons">
       <PlanetsAndMoons />
     </Route>
     <Route path="/spaceships" exact>
