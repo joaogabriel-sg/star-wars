@@ -9,11 +9,21 @@ import NotFound from '../pages/NotFound';
 
 const Routes = () => (
   <Switch>
-    <Route path="/" component={Dashboard} exact />
-    <Route path="/characters" component={Characters} exact />
-    <Route path="/planets-and-moons" component={PlanetsAndMoons} exact />
-    <Route path="/spaceships" component={Spaceships} exact />
-    <Route path="*" component={NotFound} />
+    <Route path="/" exact>
+      <Dashboard />
+    </Route>
+    <Route path="/characters">
+      <Characters />
+    </Route>
+    <Route path="/planets-and-moons" exact>
+      <PlanetsAndMoons />
+    </Route>
+    <Route path="/spaceships" exact>
+      <Spaceships />
+    </Route>
+    <Route path="*">
+      <NotFound />
+    </Route>
   </Switch>
 );
 
