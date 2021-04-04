@@ -13,7 +13,7 @@ import Sidebar from './components/Sidebar';
 import { StarWarsDataProvider } from './contexts/StarWarsDataContext';
 
 const App = () => (
-  <ThemeProvider theme={light || dark}>
+  <ThemeProvider theme={dark || light}>
     <StarWarsDataProvider>
       <Container>
         <BrowserRouter>
