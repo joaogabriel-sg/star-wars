@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { IoClose, IoMoonOutline } from 'react-icons/io5';
+import { IoClose, IoSunnyOutline, IoMoonOutline } from 'react-icons/io5';
 
 import { Container, Content, BtnClose, Title, Setting } from './styles';
+import { ThemeSwitcherContext } from '../../contexts/ThemeSwitcherContext';
 
 const Modal = ({ changeModalVisibility }) => {
+  const { activeTheme, changeThemeMode } = useContext(ThemeSwitcherContext);
+
   function checkClickOutsideModalContent(e) {
     if (e.currentTarget === e.target) changeModalVisibility();
   }
@@ -16,10 +19,13 @@ const Modal = ({ changeModalVisibility }) => {
           <IoClose size={20} />
         </BtnClose>
         <Title>Settings</Title>
-
-        <Setting>
+        <Setting onClick={changeThemeMode}>
           <span>Change theme mode</span>
-          <IoMoonOutline size={24} />
+          {activeTheme.title === 'dark' ? (
+            <IoSunnyOutline size={24} />
+          ) : (
+            <IoMoonOutline size={24} />
+          )}
         </Setting>
       </Content>
     </Container>
