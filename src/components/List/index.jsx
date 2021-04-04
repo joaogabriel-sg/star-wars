@@ -11,12 +11,13 @@ const List = ({ data, type }) => {
     <Wrapper>
       {data.length > 0 &&
         data.map((item, index) => {
-          if (type === 'characters' && index >= 16)
-            return <Item to={`${path}/${index + 2}`}>{item.name}</Item>;
-
           if (type === 'planets' && index === 27) return null;
 
-          return <Item to={`${path}/${index + 1}`}>{item.name}</Item>;
+          const urlSplitted = item.url.split('/');
+          urlSplitted.pop();
+          const id = urlSplitted[urlSplitted.length - 1];
+
+          return <Item to={`${path}/${id}`}>{item.name}</Item>;
         })}
     </Wrapper>
   );

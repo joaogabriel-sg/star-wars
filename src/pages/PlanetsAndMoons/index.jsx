@@ -6,6 +6,7 @@ import Menu from './Menu';
 import Planets from './Planets';
 import PlanetsIndividually from './Planets/PlanetsIndividually';
 import Moons from './Moons';
+import MoonsIndividually from './Moons/MoonsIndividually';
 
 import { Container } from './styles';
 
@@ -24,6 +25,11 @@ const PlanetsAndMoons = () => {
           exact
         />
         <Route path={`${path}/moons`} component={Moons} exact />
+        <Route
+          path={`${path}/moons/:starshipId`}
+          component={MoonsIndividually}
+          exact
+        />
       </Switch>
     </Container>
   );

@@ -17,6 +17,7 @@ export const Item = styled(Link)`
 
   font-size: 1.6rem;
   font-weight: 700;
+  text-align: center;
 
   transition: all 0.2s linear;
 
