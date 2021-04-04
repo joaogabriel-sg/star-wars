@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRouteMatch } from 'react-router-dom';
 
-import { ReactComponent as IconPlanets } from '../../../assets/icon-planets.svg';
-import { ReactComponent as IconMoons } from '../../../assets/icon-moons.svg';
+import { ReactComponent as IconVehicles } from '../../../assets/icon-vehicles.svg';
+import { ReactComponent as IconStarships } from '../../../assets/icon-starships.svg';
 
 import { Container, Item } from './styles';
 import Card from '../../../components/Card';
@@ -12,14 +12,14 @@ const Menu = () => {
 
   return (
     <Container>
-      <Item to={`${path}/planets`}>
+      <Item to={`${path}/vehicles`}>
         <Card>
-          <IconPlanets /> Planets
+          <IconVehicles /> Vehicles
         </Card>
       </Item>
-      <Item to={`${path}/moons`}>
+      <Item to={`${path}/starships`}>
         <Card>
-          <IconMoons /> Moons
+          <IconStarships /> Starships
         </Card>
       </Item>
     </Container>

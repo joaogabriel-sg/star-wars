@@ -6,7 +6,7 @@ import {
   IoBuildOutline,
 } from 'react-icons/io5';
 
-import { ReactComponent as IconMoons } from '../../../../assets/icon-moons.svg';
+import { ReactComponent as IconVehicles } from '../../../../assets/icon-vehicles.svg';
 
 import BackButton from '../../../../components/BackButton';
 import ItemName from '../../../../components/ItemName';
@@ -16,9 +16,9 @@ import { api } from '../../../../services/api';
 
 import { Infos, Info } from './styles';
 
-const PlanetsIndividually = () => {
-  const { starshipId } = useParams();
-  const [starship, setStarship] = useState(null);
+const VehiclesIndividually = () => {
+  const { vehicleId } = useParams();
+  const [vehicle, setVehicle] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -29,8 +29,8 @@ const PlanetsIndividually = () => {
       setLoading(true);
       setError(false);
 
-      const { data: starshipData } = await api.get(`starships/${starshipId}`);
-      setStarship(starshipData);
+      const { data: starshipData } = await api.get(`vehicles/${vehicleId}`);
+      setVehicle(starshipData);
     } catch (err) {
       setError(true);
     } finally {
@@ -44,28 +44,28 @@ const PlanetsIndividually = () => {
 
   return (
     <div>
-      <BackButton to="/planets-and-moons/moons" />
-      {starship && (
+      <BackButton to="/vehicles-and-starships/vehicles" />
+      {vehicle && (
         <>
           <ItemName>
-            <IconMoons /> {starship.name}
+            <IconVehicles /> {vehicle.name}
           </ItemName>
           <Infos>
             <Card>
               <IoPeopleOutline size={cardIconSize} />
-              <Info>{starship.passengers.replace(',', '.')}</Info>
+              <Info>{vehicle.passengers.replace(',', '.')}</Info>
             </Card>
             <Card>
               <IoAirplaneOutline size={cardIconSize} />
               <Info>
-                {starship.cargo_capacity === 'unknown'
+                {vehicle.cargo_capacity === 'unknown'
                   ? 'unknown'
-                  : `${starship.cargo_capacity} kg`}
+                  : `${vehicle.cargo_capacity} kg`}
               </Info>
             </Card>
             <Card>
               <IoBuildOutline size={cardIconSize} />
-              <Info>{starship.manufacturer}</Info>
+              <Info>{vehicle.manufacturer}</Info>
             </Card>
           </Infos>
         </>
@@ -74,4 +74,4 @@ const PlanetsIndividually = () => {
   );
 };
 
-export default PlanetsIndividually;
+export default VehiclesIndividually;

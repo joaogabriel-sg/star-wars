@@ -5,15 +5,15 @@ import List from '../../../components/List';
 
 import { StarWarsDataContext } from '../../../contexts/StarWarsDataContext';
 
-const Planets = () => {
-  const { planets } = useContext(StarWarsDataContext);
+const Starships = () => {
+  const { vehicles } = useContext(StarWarsDataContext);
 
   return (
     <div>
-      <BackButton to="/planets-and-moons" />
-      <List data={planets} type="planets" />
+      <BackButton to="/vehicles-and-starships" />
+      <List data={vehicles} type="vehicles" />
     </div>
   );
 };
 
-export default Planets;
+export default Starships;

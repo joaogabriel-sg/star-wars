@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import iconCharacters from '../../../assets/icon-characters.svg';
 import iconPlanets from '../../../assets/icon-planets.svg';
-import iconMoons from '../../../assets/icon-moons.svg';
-import iconSpaceships from '../../../assets/icon-spaceships.svg';
+import iconStarships from '../../../assets/icon-starships.svg';
+import iconVehicles from '../../../assets/icon-vehicles.svg';
 
 import Card from '../../../components/Card';
 import SingleInfo from './SingleInfo';
@@ -31,23 +31,23 @@ const Infos = () => {
         <DoubleInfo
           infos={[
             {
-              title: 'Planets',
-              quantity: planets.length || 0,
-              icon: iconPlanets,
+              title: 'Vehicles',
+              quantity: vehicles.length || 0,
+              icon: iconVehicles,
             },
             {
-              title: 'Moons',
+              title: 'Starships',
               quantity: starships.length || 0,
-              icon: iconMoons,
+              icon: iconStarships,
             },
           ]}
         />
       </Card>
       <Card>
         <SingleInfo
-          title="Spaceships"
-          quantity={vehicles.length || 0}
-          icon={iconSpaceships}
+          title="Planets"
+          quantity={planets.length || 0}
+          icon={iconPlanets}
         />
       </Card>
     </Container>

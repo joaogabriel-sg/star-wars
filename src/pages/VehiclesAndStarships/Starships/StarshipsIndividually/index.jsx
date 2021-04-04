@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import {
   IoPeopleOutline,
-  IoPartlySunnyOutline,
-  IoImageOutline,
+  IoAirplaneOutline,
+  IoBuildOutline,
 } from 'react-icons/io5';
 
-import { ReactComponent as IconPlanets } from '../../../../assets/icon-planets.svg';
+import { ReactComponent as IconStarships } from '../../../../assets/icon-starships.svg';
 
 import BackButton from '../../../../components/BackButton';
 import ItemName from '../../../../components/ItemName';
@@ -16,9 +16,9 @@ import { api } from '../../../../services/api';
 
 import { Infos, Info } from './styles';
 
-const PlanetsIndividually = () => {
-  const { planetId } = useParams();
-  const [planet, setPlanet] = useState(null);
+const StarshipsIndividually = () => {
+  const { starshipId } = useParams();
+  const [starship, setStarship] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -29,8 +29,8 @@ const PlanetsIndividually = () => {
       setLoading(true);
       setError(false);
 
-      const { data: planetData } = await api.get(`planets/${planetId}`);
-      setPlanet(planetData);
+      const { data: starshipData } = await api.get(`starships/${starshipId}`);
+      setStarship(starshipData);
     } catch (err) {
       setError(true);
     } finally {
@@ -44,24 +44,28 @@ const PlanetsIndividually = () => {
 
   return (
     <div>
-      <BackButton to="/planets-and-moons/planets" />
-      {planet && (
+      <BackButton to="/vehicles-and-starships/starships" />
+      {starship && (
         <>
           <ItemName>
-            <IconPlanets /> {planet.name}
+            <IconStarships /> {starship.name}
           </ItemName>
           <Infos>
             <Card>
               <IoPeopleOutline size={cardIconSize} />
-              <Info>{planet.population}</Info>
+              <Info>{starship.passengers.replace(',', '.')}</Info>
             </Card>
             <Card>
-              <IoPartlySunnyOutline size={cardIconSize} />
-              <Info>{planet.climate}</Info>
+              <IoAirplaneOutline size={cardIconSize} />
+              <Info>
+                {starship.cargo_capacity === 'unknown'
+                  ? 'unknown'
+                  : `${starship.cargo_capacity} kg`}
+              </Info>
             </Card>
             <Card>
-              <IoImageOutline size={cardIconSize} />
-              <Info>{planet.terrain}</Info>
+              <IoBuildOutline size={cardIconSize} />
+              <Info>{starship.manufacturer}</Info>
             </Card>
           </Infos>
         </>
@@ -70,4 +74,4 @@ const PlanetsIndividually = () => {
   );
 };
 
-export default PlanetsIndividually;
+export default StarshipsIndividually;

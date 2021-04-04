@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import Dashboard from '../pages/Dashboard';
 import Characters from '../pages/Characters';
-import PlanetsAndMoons from '../pages/PlanetsAndMoons';
-import Spaceships from '../pages/Spaceships';
+import Planets from '../pages/Planets';
+import VehiclesAndStarships from '../pages/VehiclesAndStarships';
 import NotFound from '../pages/NotFound';
 
 const Routes = () => (
@@ -15,11 +15,11 @@ const Routes = () => (
     <Route path="/characters">
       <Characters />
     </Route>
-    <Route path="/planets-and-moons">
-      <PlanetsAndMoons />
+    <Route path="/planets">
+      <Planets />
     </Route>
-    <Route path="/spaceships" exact>
-      <Spaceships />
+    <Route path="/vehicles-and-starships">
+      <VehiclesAndStarships />
     </Route>
     <Route path="*">
       <NotFound />
