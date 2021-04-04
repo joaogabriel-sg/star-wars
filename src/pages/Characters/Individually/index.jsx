@@ -9,6 +9,7 @@ import BackButton from '../../../components/BackButton';
 import ItemName from '../../../components/ItemName';
 import Infos from './Infos';
 import Planet from './Planet';
+import Loading from '../../../components/Loading';
 
 import { Container } from './styles';
 
@@ -37,7 +38,7 @@ const Individually = () => {
     }
   }, []);
 
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <Loading />;
 
   if (error) return <h2>Error</h2>;
 

@@ -11,6 +11,7 @@ import { ReactComponent as IconVehicles } from '../../../../assets/icon-vehicles
 import BackButton from '../../../../components/BackButton';
 import ItemName from '../../../../components/ItemName';
 import Card from '../../../../components/Card';
+import Loading from '../../../../components/Loading';
 
 import { api } from '../../../../services/api';
 
@@ -38,7 +39,7 @@ const VehiclesIndividually = () => {
     }
   }, []);
 
-  if (loading) return <h2>Loading...</h2>;
+  if (loading) return <Loading />;
 
   if (error) return <h2>Error</h2>;
 
