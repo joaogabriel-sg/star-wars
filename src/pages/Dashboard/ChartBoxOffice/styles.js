@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-export const ChartContainer = styled.div`
+export const Container = styled.div`
   grid-area: chart;
 
   & > div {
     flex-direction: column;
-    align-items: flex-start;
     justify-content: flex-start;
     padding: 4rem;
   }
@@ -16,3 +15,5 @@ export const Title = styled.h2`
   font-weight: 700;
   line-height: 1;
 `;
+
+export const ChartContainer = styled.div``;
