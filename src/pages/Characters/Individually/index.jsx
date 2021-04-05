@@ -10,6 +10,7 @@ import ItemName from '../../../components/ItemName';
 import Infos from './Infos';
 import Planet from './Planet';
 import Loading from '../../../components/Loading';
+import ErrorComponent from '../../../components/ErrorComponent';
 
 import { Container } from './styles';
 
@@ -40,7 +41,13 @@ const Individually = () => {
 
   if (loading) return <Loading />;
 
-  if (error) return <h2>Error</h2>;
+  if (error)
+    return (
+      <>
+        <BackButton to="/planets" />
+        <ErrorComponent />
+      </>
+    );
 
   return (
     <Container>

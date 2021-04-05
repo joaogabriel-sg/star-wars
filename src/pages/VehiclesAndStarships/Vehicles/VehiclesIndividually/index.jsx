@@ -12,6 +12,7 @@ import BackButton from '../../../../components/BackButton';
 import ItemName from '../../../../components/ItemName';
 import Card from '../../../../components/Card';
 import Loading from '../../../../components/Loading';
+import ErrorComponent from '../../../../components/ErrorComponent';
 
 import { api } from '../../../../services/api';
 
@@ -41,7 +42,13 @@ const VehiclesIndividually = () => {
 
   if (loading) return <Loading />;
 
-  if (error) return <h2>Error</h2>;
+  if (error)
+    return (
+      <>
+        <BackButton to="/planets" />
+        <ErrorComponent />
+      </>
+    );
 
   return (
     <div>

@@ -5,9 +5,8 @@ import LatestMovies from './LatestMovies';
 import ChartBoxOffice from './ChartBoxOffice';
 
 import Loading from '../../components/Loading';
-
+import ErrorComponent from '../../components/ErrorComponent';
 import { Container } from './styles';
-
 import { StarWarsDataContext } from '../../contexts/StarWarsDataContext';
 
 const Dashboard = () => {
@@ -15,7 +14,12 @@ const Dashboard = () => {
 
   if (loading) return <Loading />;
 
-  if (error) return <h2>Error</h2>;
+  if (error)
+    return (
+      <Container>
+        <ErrorComponent />
+      </Container>
+    );
 
   return (
     <Container>
