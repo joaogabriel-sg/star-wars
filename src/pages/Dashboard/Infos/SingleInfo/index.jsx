@@ -15,7 +15,7 @@ const SingleInfo = ({ title, quantity, icon }) => (
 
 SingleInfo.propTypes = {
   title: PropTypes.string.isRequired,
-  quantity: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   icon: PropTypes.string.isRequired,
 };
 

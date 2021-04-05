@@ -6,12 +6,14 @@ import { ReactComponent as IconStarships } from '../../../assets/icon-starships.
 
 import { Container, Item } from './styles';
 import Card from '../../../components/Card';
+import Head from '../../../components/Head';
 
 const Menu = () => {
   const { path } = useRouteMatch();
 
   return (
     <Container>
+      <Head title="Vehicles and Starships" />
       <Item to={`${path}/vehicles`}>
         <Card>
           <IconVehicles /> Vehicles

@@ -17,14 +17,18 @@ const List = ({ data, type }) => {
           urlSplitted.pop();
           const id = urlSplitted[urlSplitted.length - 1];
 
-          return <Item to={`${path}/${id}`}>{item.name}</Item>;
+          return (
+            <Item key={id} to={`${path}/${id}`}>
+              {item.name}
+            </Item>
+          );
         })}
     </Wrapper>
   );
 };
 
 List.propTypes = {
-  data: PropTypes.arrayOf({}).isRequired,
+  data: PropTypes.arrayOf(PropTypes.any).isRequired,
   type: PropTypes.string.isRequired,
 };
 

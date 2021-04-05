@@ -13,6 +13,7 @@ import ItemName from '../../../../components/ItemName';
 import Card from '../../../../components/Card';
 import Loading from '../../../../components/Loading';
 import ErrorComponent from '../../../../components/ErrorComponent';
+import Head from '../../../../components/Head';
 
 import { api } from '../../../../services/api';
 
@@ -55,6 +56,7 @@ const StarshipsIndividually = () => {
       <BackButton to="/vehicles-and-starships/starships" />
       {starship && (
         <>
+          <Head title={starship.name} />
           <ItemName>
             <IconStarships /> {starship.name}
           </ItemName>

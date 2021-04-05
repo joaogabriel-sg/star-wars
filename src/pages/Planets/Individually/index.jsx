@@ -13,6 +13,7 @@ import ItemName from '../../../components/ItemName';
 import Card from '../../../components/Card';
 import Loading from '../../../components/Loading';
 import ErrorComponent from '../../../components/ErrorComponent';
+import Head from '../../../components/Head';
 
 import { api } from '../../../services/api';
 
@@ -55,6 +56,7 @@ const Individually = () => {
       <BackButton to="/planets" />
       {planet && (
         <>
+          <Head title={planet.name} />
           <ItemName>
             <IconPlanets /> {planet.name}
           </ItemName>

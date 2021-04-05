@@ -22,7 +22,7 @@ const Row = ({ title, episodeId, director, release }) => {
 
 Row.propTypes = {
   title: PropTypes.string.isRequired,
-  episodeId: PropTypes.string.isRequired,
+  episodeId: PropTypes.number.isRequired,
   director: PropTypes.string.isRequired,
   release: PropTypes.string.isRequired,
 };

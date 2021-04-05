@@ -13,6 +13,7 @@ import Loading from '../../../components/Loading';
 import ErrorComponent from '../../../components/ErrorComponent';
 
 import { Container } from './styles';
+import Head from '../../../components/Head';
 
 const Individually = () => {
   const { characterId } = useParams();
@@ -54,8 +55,9 @@ const Individually = () => {
       <BackButton to="/characters" />
       {character && planet && (
         <>
+          <Head title={character.name} />
           <ItemName>
-            <IconCharacters /> {character && character.name}
+            <IconCharacters /> {character.name}
           </ItemName>
           <Infos
             gender={character.gender}
