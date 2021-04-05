@@ -8,8 +8,14 @@ import { Container, Message } from './styles';
 const DoubleInfo = ({ infos }) => (
   <Container>
     {infos.length === 2 ? (
-      infos.map(({ title, quantity, icon }) => (
-        <SingleInfo key={title} title={title} quantity={quantity} icon={icon} />
+      infos.map(({ title, quantity, icon, to }) => (
+        <SingleInfo
+          key={title}
+          title={title}
+          quantity={quantity}
+          icon={icon}
+          to={to}
+        />
       ))
     ) : (
       <Message>Please, insert two Star Wars informations!</Message>
@@ -23,6 +29,7 @@ DoubleInfo.propTypes = {
       title: PropTypes.string.isRequired,
       quantity: PropTypes.number.isRequired,
       icon: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };

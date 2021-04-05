@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 2rem;
 `;
 
@@ -29,5 +29,10 @@ export const Item = styled(Link)`
       theme.title === 'dark'
         ? theme.colors.primary
         : theme.colors.palette.yellow};
+  }
+
+  @media screen and (max-width: 820px) {
+    background: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.text};
   }
 `;

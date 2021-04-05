@@ -36,6 +36,11 @@ const ChartBoxOffice = () => {
               cornerRadius={4}
               flyoutPadding={12}
               style={{ fontSize: 20, fontWeight: 'bold' }}
+              flyoutStyle={{
+                fill: palette.yellow,
+                stroke: palette.yellowDark,
+                strokeWidth: 4,
+              }}
               constrainToVisibleArea
             />
           }

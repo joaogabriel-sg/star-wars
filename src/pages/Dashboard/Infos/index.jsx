@@ -25,6 +25,7 @@ const Infos = () => {
           title="Characters"
           quantity={characters.length || 0}
           icon={iconCharacters}
+          to="/characters"
         />
       </Card>
       <Card>
@@ -34,11 +35,13 @@ const Infos = () => {
               title: 'Vehicles',
               quantity: vehicles.length || 0,
               icon: iconVehicles,
+              to: '/vehicles-and-starships/vehicles',
             },
             {
               title: 'Starships',
               quantity: starships.length || 0,
               icon: iconStarships,
+              to: '/vehicles-and-starships/starships',
             },
           ]}
         />
@@ -48,6 +51,7 @@ const Infos = () => {
           title="Planets"
           quantity={planets.length || 0}
           icon={iconPlanets}
+          to="/planets"
         />
       </Card>
     </Container>

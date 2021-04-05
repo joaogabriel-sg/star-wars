@@ -6,15 +6,26 @@ export const Container = styled.div`
   justify-content: center;
 
   & > :nth-child(1) {
-    transition: border-color 0.4s;
-    padding-right: 2rem;
-    border-right: 0.1rem solid ${({ theme }) => theme.colors.text};
+    padding-right: 0;
+    &::after {
+      content: '';
+      background: ${({ theme }) => theme.colors.text};
+      width: 0.2rem;
+      height: 6.4rem;
+      margin-left: 1rem;
+      transition: all 0.4s;
+    }
+
+    @media screen and (max-width: 820px) {
+      padding-right: 2rem;
+      &::after {
+        display: none;
+      }
+    }
   }
 
   & > :nth-child(2) {
-    transition: border-color 0.4s;
     padding-left: 2rem;
-    border-left: 0.1rem solid ${({ theme }) => theme.colors.text};
   }
 
   @media screen and (max-width: 820px) {

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
+export const Container = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
   width: 100%;
+  padding: 2rem;
 `;
 
 export const Title = styled.h2`
