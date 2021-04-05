@@ -5,6 +5,10 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+  }
 `;
 
 export const Item = styled(Link)`

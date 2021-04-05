@@ -11,6 +11,7 @@ export const Title = styled.h1`
   font-weight: 700;
   font-style: italic;
   line-height: 1;
+  text-align: center;
   color: ${({ theme }) =>
     theme.title === 'dark' ? theme.colors.palette.yellow : theme.colors.text};
 

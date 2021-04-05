@@ -8,6 +8,10 @@ export const Infos = styled.div`
   & > div {
     flex-direction: column;
   }
+
+  @media screen and (max-width: 820px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const Info = styled.span`
