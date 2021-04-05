@@ -8,7 +8,7 @@ import { ReactComponent as VehiclesIcon } from '../../assets/icon-vehicles.svg';
 
 import Item from './Item';
 
-import { Container, Settings } from './styles';
+import { Container, Wrapper, Settings } from './styles';
 import Modal from '../Modal';
 
 const Sidebar = () => {
@@ -20,10 +20,10 @@ const Sidebar = () => {
 
   return (
     <Container>
-      <div>
-        <Item to="/" exact>
-          <StarWarsLogo />
-        </Item>
+      <Item to="/" exact>
+        <StarWarsLogo />
+      </Item>
+      <Wrapper>
         <Item to="/characters" title="Characters">
           <CharactersIcon />
         </Item>
@@ -33,7 +33,7 @@ const Sidebar = () => {
         <Item to="/vehicles-and-starships" title="Vehicles and Starships">
           <VehiclesIcon />
         </Item>
-      </div>
+      </Wrapper>
 
       <Settings onClick={changeModalVisibility}>
         <IoSettingsOutline size={24} />

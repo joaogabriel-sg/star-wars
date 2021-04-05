@@ -13,6 +13,23 @@ export const Container = styled.aside`
   justify-content: space-between;
 `;
 
+export const Wrapper = styled.div`
+  flex: 1;
+
+  @media screen and (max-width: 820px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 3.2rem 0;
+
+    & > :nth-child(2) {
+      order: 2;
+    }
+  }
+`;
+
 export const Settings = styled.button`
   background: transparent;
   width: 100%;

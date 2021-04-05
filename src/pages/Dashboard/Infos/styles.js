@@ -14,4 +14,29 @@ export const Container = styled.div`
   & > div:nth-child(2) {
     flex: 2;
   }
+
+  @media screen and (max-width: 1180px) {
+    grid-template-columns: 1fr 1fr;
+
+    & > div:nth-child(1) {
+      order: 1;
+    }
+    & > div:nth-child(2) {
+      order: 3;
+      grid-column: 1 / -1;
+    }
+    & > div:nth-child(3) {
+      order: 2;
+    }
+
+    @media screen and (max-width: 820px) {
+      grid-template-columns: 1fr;
+
+      & > div:nth-child(2) {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  }
 `;

@@ -14,6 +14,7 @@ export const Container = styled.div`
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   min-height: 100%;
+  padding: 0 1%;
 `;
 
 export const Content = styled.div`
@@ -62,6 +63,7 @@ export const Setting = styled.button`
   padding: 0.4rem;
   border-radius: 0.4rem;
 
+  text-align: left;
   color: ${({ theme }) => theme.colors.text};
 
   transition: all 0.4s;

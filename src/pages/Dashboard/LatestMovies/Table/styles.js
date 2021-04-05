@@ -8,6 +8,19 @@ export const TableContainer = styled.table`
   td:last-child {
     text-align: center;
   }
+
+  @media screen and (max-width: 425px) {
+    td:nth-child(3),
+    td:nth-child(4) {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 250px) {
+    td:nth-child(2) {
+      display: none;
+    }
+  }
 `;
 
 export const THead = styled.thead`

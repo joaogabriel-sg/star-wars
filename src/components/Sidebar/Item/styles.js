@@ -35,6 +35,13 @@ export const Container = styled(NavLink)`
       color: ${({ theme }) => theme.colors.palette.yellow};
     }
   }
+
+  @media screen and (max-width: 820px) {
+    margin-bottom: 0;
+    &:nth-child(1) {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const Title = styled.h2`
@@ -42,4 +49,8 @@ export const Title = styled.h2`
 
   color: ${({ theme }) => theme.colors.palette.cloud};
   transition: color 0.4s;
+
+  @media screen and (max-width: 820px) {
+    display: none;
+  }
 `;

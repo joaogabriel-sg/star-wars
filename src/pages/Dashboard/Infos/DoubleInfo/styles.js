@@ -14,6 +14,21 @@ export const Container = styled.div`
     padding-left: 2rem;
     border-left: 0.1rem solid ${({ theme }) => theme.colors.text};
   }
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    & > :nth-child(1),
+    & > :nth-child(2) {
+      background: ${({ theme }) => theme.colors.primary};
+      padding: 2rem;
+      border: 0;
+      border-radius: 0.4rem;
+      box-shadow: 0.4rem 0.4rem 0.8rem rgba(0, 0, 0, 0.05);
+    }
+  }
 `;
 
 export const Message = styled.p`

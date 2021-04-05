@@ -5,4 +5,9 @@ export const Container = styled.main`
   background: ${({ theme }) => theme.colors.secondary};
   height: 100vh;
   overflow-y: hidden;
+
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    overflow-y: auto;
+  }
 `;
