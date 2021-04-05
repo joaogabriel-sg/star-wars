@@ -9,6 +9,12 @@ export const Container = styled.div`
   & > div {
     flex-direction: column;
   }
+
+  @media screen and (max-width: 820px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    overflow-y: visible;
+  }
 `;
 
 export const Info = styled.span`

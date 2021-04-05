@@ -20,4 +20,8 @@ export const Name = styled.h2`
           : theme.colors.text};
     }
   }
+
+  @media screen and (max-width: 820px) {
+    font-size: 3.6rem;
+  }
 `;

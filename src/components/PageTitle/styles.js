@@ -25,4 +25,12 @@ export const Title = styled.h1`
     border-radius: 0.4rem;
     margin-left: 1.2rem;
   }
+
+  @media screen and (max-width: 820px) {
+    justify-content: center;
+
+    &:after {
+      display: none;
+    }
+  }
 `;
