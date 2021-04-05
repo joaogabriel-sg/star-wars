@@ -6,11 +6,13 @@ export const Container = styled.div`
   justify-content: center;
 
   & > :nth-child(1) {
+    transition: border-color 0.4s;
     padding-right: 2rem;
     border-right: 0.1rem solid ${({ theme }) => theme.colors.text};
   }
 
   & > :nth-child(2) {
+    transition: border-color 0.4s;
     padding-left: 2rem;
     border-left: 0.1rem solid ${({ theme }) => theme.colors.text};
   }

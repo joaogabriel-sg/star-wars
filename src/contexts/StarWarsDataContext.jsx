@@ -31,7 +31,7 @@ export const StarWarsDataProvider = ({ children }) => {
 
       const moviesRequest = createRequestUrlByPage(1, 'films');
       const charactersRequest = createRequestUrlByPage(9, 'people');
-      const planetsRequest = createRequestUrlByPage(6, 'panets');
+      const planetsRequest = createRequestUrlByPage(6, 'planets');
       const starshipsRequest = createRequestUrlByPage(4, 'starships');
       const vehiclesRequest = createRequestUrlByPage(4, 'vehicles');
 
